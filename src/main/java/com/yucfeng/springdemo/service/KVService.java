@@ -6,10 +6,11 @@ import org.springframework.stereotype.Service;
 
 import java.sql.SQLException;
 import java.util.Map;
+import java.util.Optional;
 
 @Service
 public interface KVService {
 
     String doGetValue(String key, boolean force) throws InterruptedException;
-    Map<String, Object> doInsertOrUpdateValue(RequestBean entity) throws InterruptedException, SQLException;
+    Optional<Entity> doInsertOrUpdateValue(RequestBean requestBean) throws InterruptedException, SQLException;
 }
